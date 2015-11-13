@@ -51,7 +51,7 @@ function draw() {
     text("complaints about",windowWidth/2,200);
 
     fill("#ED6A5A");
-    text(code,0,260,windowWidth, 250);
+    text(complaintCodes[code]["category"],0,260,windowWidth, 250);
 
 }
 

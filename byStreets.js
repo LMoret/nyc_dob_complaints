@@ -21,7 +21,7 @@ function setup() {
    //count the complaints per street
     var streets = {};
     for (var i = 0; i < complaints.data.length; i++) {
-        var streetName = complaints.data[i][12];
+        var streetName = trim(complaints.data[i][12]);
         streets[streetName] = 1 + (streets[streetName] || 0);
     }
 
@@ -47,6 +47,14 @@ function draw() {
     fill("#ED6A5A");
     text(sortedStreets[whichStreet][0],windowWidth/2,windowHeight/2+160);
    
+   
+if(sortedStreets[whichStreet][0].indexOf("STREET") > -1){
+   line(0,100,windowHeight,0);
+//then it contains street
+} else{ line(300,0,300,windowWidth);
+    //it doesn't contain street
+}
+
 }
 
 function keyPressed() {
